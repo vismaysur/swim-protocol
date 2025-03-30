@@ -4,22 +4,42 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 project(SWIM)
 
-add_executable(${PROJECT_NAME}
-  src/server.cpp
-  include/fsa.hpp
-  include/messages.hpp
+add_library(
+  networking_source
+  src/networking.cpp
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE
+target_include_directories(
+  networking_source PRIVATE
   include/
 )
 
-add_library(fsa_source src/fsa.cpp)
+add_executable(
+  ${PROJECT_NAME}
+  src/main.cpp
+)
 
+target_link_libraries(
+  ${PROJECT_NAME}
+  networking_source
+)
 
-target_include_directories(fsa_source PRIVATE
+target_include_directories(
+  ${PROJECT_NAME} PRIVATE
   include/
 )
+
+add_library(
+  fsa_source 
+  src/fsa.cpp
+)
+
+target_include_directories(
+  fsa_source PRIVATE
+  include/
+)
+
+# TESTING
 
 include(FetchContent)
 

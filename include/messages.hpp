@@ -24,6 +24,11 @@ struct Node {
 struct Status {
   NodeStatus  status;
   uint32_t    incarnation;
+
+  bool operator==(const Status& other) const {
+    return (this->status == other.status &&
+    this->incarnation == other.incarnation);
+  }
 };
 
 struct Update {
