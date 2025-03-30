@@ -1,5 +1,0 @@
-if(EXISTS "/Users/vismay/Code/DistSys/swim-protocol/build/fsa_test[1]_tests.cmake")
-  include("/Users/vismay/Code/DistSys/swim-protocol/build/fsa_test[1]_tests.cmake")
-else()
-  add_test(fsa_test_NOT_BUILT fsa_test_NOT_BUILT)
-endif()
