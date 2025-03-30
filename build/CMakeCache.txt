@@ -308,15 +308,6 @@ GTEST_HAS_ABSL:BOOL=OFF
 INSTALL_GTEST:BOOL=ON
 
 //Value Computed by CMake
-Project_BINARY_DIR:STATIC=/Users/vismay/Code/DistSys/swim-protocol/build
-
-//Value Computed by CMake
-Project_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/Users/vismay/Code/DistSys/swim-protocol
-
-//Value Computed by CMake
 SWIM_BINARY_DIR:STATIC=/Users/vismay/Code/DistSys/swim-protocol/build
 
 //Value Computed by CMake
