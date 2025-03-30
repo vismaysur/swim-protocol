@@ -86,5 +86,5 @@ int main() {
 
   close(sockfd);
 
-	return 0;
+  return EXIT_SUCCESS;
 }
