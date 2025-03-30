@@ -1,3 +1,5 @@
+#include "networking.hpp"
+
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -23,7 +25,7 @@ void* get_in_addr(struct sockaddr* sa) {
   return &(reinterpret_cast<struct sockaddr_in6*>(sa)->sin6_addr);
 }
 
-int main() {
+int Networking::runServer() {
   int status {};
   struct addrinfo hints {};
   struct addrinfo *res = nullptr;
@@ -87,4 +89,8 @@ int main() {
   close(sockfd);
 
   return EXIT_SUCCESS;
+}
+
+int Networking::runClient() {
+  return 0;
 }

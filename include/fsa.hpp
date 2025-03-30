@@ -14,4 +14,6 @@ class FiniteStateMachine {
     int handleUpdates(std::vector<Update> updates);
 
     int getGroupSize();
+
+    Status getNodeStatus(std::string address);
 };

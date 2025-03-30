@@ -11,7 +11,7 @@ int FiniteStateMachine::handleUpdates(std::vector<Update> updates) {
     Node node = update.node;
     Status status = update.status;
 
-    std::string address = node.ip + std::to_string(node.port);
+    std::string address = node.ip + ":" + std::to_string(node.port);
 
     if (group.find(address) == group.end() &&
         status.status == NodeStatus::ALIVE) {
@@ -36,4 +36,8 @@ int FiniteStateMachine::handleUpdates(std::vector<Update> updates) {
 
 int FiniteStateMachine::getGroupSize() {
   return group.size();
+}
+
+Status FiniteStateMachine::getNodeStatus(std::string address) {
+  return group.at(address); 
 }
